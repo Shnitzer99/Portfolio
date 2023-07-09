@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perssonal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/588b18d5b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <!-- <img src="images/logo.png" class="logo"> -->
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>B.Tech Engineer</p>
+            <h1>Hi, I'm <span>Neelak</span><br> Dasgupta From India</h1>
+        </div>
+    </div>
+
+</div>
+<!-- --------------about------------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user_prof.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am a programming enthusiast, who wants to make a difference to the world, with the use of my knowledge. I have a keen interest on Computer Vision and works related to Image processing using advanced AI/ML tools, such as Python and MATLAB.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                </div>
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>2020 - Current</span><br>B.Tech Artificial Intelligence - SRMIST,Chennai,Tamil Nadu</li>
+                        <li><span>2018 - 2020</span><br>12th Standard ISC, Calcutta Boys' School,Kolkata,West Bengal</li>
+                        <li><span>2016 - 2018</span><br>10th Standard ICSE, Calcutta Boys' School,Kolkata,West Bengal</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>
+                        <li><span>AI-ML</span><br>Using AI and ML Algorithms for automation</li>
+                        <li><span>Front-End</span><br>Designing and building Web/App interfaces</li>
+                        <li><span>React-JS</span><br>Working with React and Angular JS</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>IIT Patna Research Intern</span><br>Working on Natural Language Processing and Image Processing in the Financial Field</li>
+                        <li><span>Edutech Intern</span><br>Learning the controlling mechanisms of Quanser's high performing educational bot, Q-Bot</li>
+                        <li><span>NVIDIA Jetsen Workshop</span><br>Workshop on Deployment of programs in Jetsen and its applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -----------------projects-------------- -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="proj-list">
+            <div class="proj">
+                <img src="images/proj_1.jpg">
+                <div class="layer">
+                    <p>A computer vision based object detection and recognition model, that allows only recognized faces to enter</p>
+                    <a href="https://github.com/Shnitzer99/Intruder-Detection-System"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="proj">
+                <img src="images/proj_2.jpg">
+                <div class="layer">
+                    <p>The usage of computer vision and optical character recognition in the smart identification of automobile number plates</p>
+                    <a href="https://github.com/Shnitzer99/Autonomous-License-Plate-Recognition"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="proj">
+                <img src="images/proj_3.jpg">
+                <div class="layer">
+                    <p>A python based personal voice assistant, that is able to cater to the needs of the user, using python speech and microphone libraries</p>
+                <a href="https://github.com/Shnitzer99/Personal_Assistant"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!-- -------------------contact-------------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i>neelcbs18@gmail.com</p>
+                <p><i class="fa-solid fa-phone-volume"></i>8240557516</p>
+                <div class="social-icons">
+                    <a href="https://github.com/Shnitzer99"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com/in/neelak-dasgupta-aa4750258"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/phoenix__ghoul"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                <a href="images/Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
+<script>
+    var sidemeu=document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right="0";
+    }
+    function closemenu(){
+        sidemeu.style.right="-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz8Y2OzTys5G0W-GgbTJPuDQmOBdcAZ2uEnATnXb8xMtclsaFdASVWkj50PjIZ0KnWb/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
